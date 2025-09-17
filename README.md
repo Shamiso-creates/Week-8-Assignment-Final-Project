@@ -1,4 +1,3 @@
-# Week-8-Assignment-Final-Project
 -- Create the database
 CREATE DATABASE IF NOT EXISTS EcommerceStore;
 USE EcommerceStore;
@@ -235,7 +234,7 @@ SELECT
     o.total_amount,
     o.tax_amount,
     o.shipping_amount,
-    p.payment_status,
+    p.payment_status 
     COUNT(oi.order_item_id) AS item_count
 FROM Orders o
 JOIN Customers c ON o.customer_id = c.customer_id
@@ -250,4 +249,4 @@ CREATE INDEX idx_order_items_product ON OrderItems(product_id);
 CREATE INDEX idx_payments_status ON Payments(payment_status);
 CREATE INDEX idx_reviews_product_rating ON Reviews(product_id, rating);
 CREATE INDEX idx_customers_email ON Customers(email);
-CREATE INDEX idx_products_price_stock ON Products(price, stock_quantity);
+CREATE INDEX idx_products_price_stock ON Products(price, stock_quantity); 
